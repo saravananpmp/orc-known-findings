@@ -1,0 +1,4 @@
+# ORACLE FIXTURE — exactly ONE dependency with a known published CVE.
+# requests 2.19.1 -> CVE-2018-18074 (credential leak on redirect).
+# Everything else here is current and clean.
+requests==2.19.1
