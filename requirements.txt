@@ -1,4 +1,15 @@
-# ORACLE FIXTURE — exactly ONE dependency with a known published CVE.
-# requests 2.19.1 -> CVE-2018-18074 (credential leak on redirect).
-# Everything else here is current and clean.
-requests==2.19.1
+# ORACLE FIXTURE — exactly ONE vulnerable DIRECT dependency, with exactly one
+# published advisory at the time of writing (2026-09-25).
+#
+#   certifi 2023.7.22 -> PYSEC-2024-230 / CVE-2024-39689
+#
+# certifi has NO dependencies of its own, so there is no transitive noise:
+# the resolved tree is one package, one advisory.
+#
+# Do NOT replace this with `requests==2.19.1` or similar. An old `requests`
+# drags in vulnerable urllib3 and idna, and the resolved count becomes ~36
+# advisories across 4 packages — which makes the oracle unusable.
+#
+# Advisory counts drift as new CVEs are published. The STABLE oracle value is
+# "1 vulnerable direct dependency". Treat the advisory count as advisory.
+certifi==2023.7.22
