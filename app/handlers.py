@@ -51,3 +51,4 @@ def swallow_two(raw):
         return json.loads(raw)
     except:                       # noqa: E722 — bare on purpose, see header
         pass                      # bandit B110 — planted finding 2 of 2
+# dummy pr
