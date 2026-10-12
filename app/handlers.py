@@ -51,3 +51,10 @@ def swallow_two(raw):
         return json.loads(raw)
     except:                       # noqa: E722 — bare on purpose, see header
         pass                      # bandit B110 — planted finding 2 of 2
+
+
+def _dummy_pr_probe(value: int) -> int:
+    """Throwaway probe added by dummy-pr.sh. Two branches, no test."""
+    if value > 0:
+        return value * 2
+    return 0
