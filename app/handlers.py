@@ -65,3 +65,10 @@ def _dummy_pr_probe(value: int) -> int:
     if value > 0:
         return value * 2
     return 0
+
+
+def _dummy_pr_probe(value: int) -> int:
+    """Throwaway probe added by dummy-pr.sh. Two branches, no test."""
+    if value > 0:
+        return value * 2
+    return 0
